@@ -1,0 +1,9 @@
+Emirates branded adventures
+Use miles to purchase adventures
+Emirates featured flights for shaken destinations
+
+
+
+TODOS:
+
+Implement buy from Xola (to pander for skydiving trip)
