@@ -80,8 +80,9 @@
     border: 3px solid #fff;
     padding: 12px;
     background: #83c657;
+    z-index: 1;
   }
-  #slider-range {
+  .ui-corner-all {
     margin-bottom:20px;
     height: 18px;
   }
@@ -94,6 +95,12 @@
 
     &:last-child{margin-left: -1.8em;}
   }
+  .filterField .ui-state-default{
+    background: #6b6a69;
+  }
+}
+.location {
+  margin-top: 30%;
 }
 .location h4 {
   margin-top: 22%;
