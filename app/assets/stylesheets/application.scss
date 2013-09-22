@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree
- *= require bootstrap
  */
 
 @import "bootstrap";
@@ -23,3 +22,5 @@
 // Shares Modules
 @import "modules/forms";
 @import "modules/font-awesome";
+@import "modules/gn-normalize";
+@import "modules/gn-component";

@@ -12,4 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_tree
+
+
+//= require bootstrap
+//= require modernizr.custom
+//= require classie
+//= require gnmenu
+
+$(document).ready(function() {
+  new gnMenu( document.getElementById( 'gn-menu' ) );
+});
