@@ -50,6 +50,7 @@ $(document).ready(function() {
     $('.filter').addClass("hide")
     $('.location').addClass('hide')
     $('.buy').removeClass('hide')
+    $('#shakeFormBtn').removeClass('btn-success')
   });
 
   $(function() {
