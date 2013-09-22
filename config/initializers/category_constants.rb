@@ -5,10 +5,10 @@ SPORTS_OUTDOORS = [
 					"Canyoning",
 					"Caving%20%2F%20Spelunking",
 					"Cross%20Country%20Skiing",
-					"Cycling%20%26%20Mountain Biking",  
+					"Cycling%20%26%20Mountain%20Biking",  
 					"Deep%20Sea%20Fishing",
 					"Bungee%20Jumping",          
-					"Eco-Tour%2FHike",
+					"Eco%2DTour%2FHike",
 					"Gliders",
 					"Guide%20School",   
 					"Stand%20Up%20Paddle%20(SUP)",
@@ -19,7 +19,7 @@ SPORTS_OUTDOORS = [
 					"Houseboats",
 					"Marine%20Wildlife",
 					"Music/Rafting%20festival",
-					"Off-road",
+					"Off%2Droad",
 					"Parachuting",
 					"River%20Rafting",
 					"Sleigh%20Riding",
@@ -41,7 +41,7 @@ SPORTS_OUTDOORS = [
 					"Paragliding",
 					"Mountaineering",
 					"Skiing",
-					"Hang%20Gliding ",
+					"Hang%20Gliding",
 					"Fly%20Fishing",
 					"Horseback%20Riding"
 				   ]
@@ -54,7 +54,7 @@ LUXURY_EXOTIC =[
 				"Ballooning",
 				"Dog%20Sledding",
 				"Heli%2Dskiing",
-				"Hang%20Gliding ",    
+				"Hang%20Gliding",    
 				"Helicopter%20Tours",
 				"Motor%20Yacht",
 				"Ocean%20Cruises",
@@ -89,7 +89,7 @@ CULTURAL_URBAN =[
 				  "Photography",
 				  "Beer%20Tour",
 				  "Food%20%26%20Wine",
-				  "Tourism%20%26%20Technology Summit",
+				  "Tourism%20%26%20Technology%20Summit",
 				  "Volunteering",
 				  "Website%20Creation"
                 ]

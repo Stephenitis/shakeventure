@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  $('form').on('ajax:success', function(e, data) {
+    e.preventDefault;
+    console.log('hi');
+    console.log(data)
+    $('.experience').html(data);
+  });
+
   $(".locationForm").click(function(e){
   	e.preventDefault();
   	$("div.location").toggleClass("hide")
@@ -14,5 +21,4 @@ $(document).ready(function() {
   	e.preventDefault();
   	console.log("In SUBMIT")
   });
-
 });
