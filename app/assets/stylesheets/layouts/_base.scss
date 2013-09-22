@@ -1,5 +1,11 @@
 .gn-menu-main.sv-menu {
   background-color: #83c657;
+  font-size: 16px;
+  text-align: left;
+  i {
+    font-size: 20px;
+    margin-right: 5px;
+  }
   .logo-emblem {
     position: absolute;
     top: 10px;
@@ -11,5 +17,11 @@
     border: 0;
     
     &:hover a{background-color: #73b647;}
+  }
+  .gn-menu-wrapper li{
+    a{
+      background-color: #fff;
+      color: #5f6f81;
+    }
   }
 }
