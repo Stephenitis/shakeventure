@@ -17,10 +17,13 @@ module Api
 
       response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences#{filters}"))
       # Return all experiences from Xola api based on form filters and sample one
-      @experience = ActiveSupport::JSON.decode(response.body)['data'].sample
-      p @experience
+      experience_hash = ActiveSupport::JSON.decode(response.body)
+      @image = nested_hash_finder(experience_hash,"src")
+      p @image
       p '$' * 50
-      render partial: 'shared/experience', layout: false, locals: {experience: @experience}
+      @experience = experience_hash['data'].sample
+
+      render partial: 'shared/experience', layout: false, locals: {experience: @experience, image: @image}
     end
   
     private
@@ -52,5 +55,16 @@ module Api
       end
       categories.join(',')
     end
+
+    def nested_hash_finder(obj,key)
+      if obj.respond_to?(:key?) && obj.key?(key)
+        obj[key]
+      elsif obj.respond_to?(:each)
+        r = nil
+        obj.find{ |*a| r=nested_hash_finder(a.last,key) }
+        r
+      end
+    end
+
   end
 end

@@ -7,5 +7,4 @@ module ApplicationHelper
   def mile_calculator(price)
   	price*13 + rand(500)
   end
-
 end
