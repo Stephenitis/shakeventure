@@ -36,18 +36,20 @@ $(document).ready(function() {
     $('.experience').toggleClass('hide')
     $('.icon-compass').toggleClass('hide')
     $('.gn-menu-wrapper').toggleClass('gn-open-all')
+    $('.buy').addClass('hide')
   });
 
   $("#price").change(function () {                    
-   var newValue = $('#price').val();
-   $("#valuePrice").html(newValue);
+    var newValue = $('#price').val();
+    $("#valuePrice").html(newValue);
   });
 
   $("#shakeForm").submit(function(e){
-  	e.preventDefault();
-  	console.log("In SUBMIT");
+    e.preventDefault();
+    console.log("In SUBMIT");
     $('.filter').addClass("hide")
     $('.location').addClass('hide')
+    $('.buy').removeClass('hide')
   });
 
   $(function() {
