@@ -6,16 +6,9 @@ window.onload = function() {
   function shakeEventDidOccur () {
   
     //put your own code here etc.
-    if (confirm("Undo?")) {
-
-    }
+     $('#shakeForm').trigger("submit")
   }
 };
-
-
-
-
-
 
 
 
