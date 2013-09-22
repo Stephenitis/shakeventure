@@ -1,3 +1,18 @@
+window.onload = function() {
+
+  window.addEventListener('shake', shakeEventDidOccur, false);
+  
+  //define a custom method to fire when shake occurs.
+  function shakeEventDidOccur () {
+  
+    //put your own code here etc.
+     $('#shakeForm').trigger("submit")
+  }
+};
+
+
+
+
 $(document).ready(function() {
   $('form').on('ajax:success', function(e, data) {
     e.preventDefault;
@@ -15,6 +30,11 @@ $(document).ready(function() {
   	$("#shakeFormBtn").addClass("filterForm")
   	$("#shakeFormBtn").attr("value", "Shake!")
   	$(this).unbind('click');
+  });
+
+  $("#price").change(function () {                    
+   var newValue = $('#price').val();
+   $("#valuePrice").html(newValue);
   });
 
   $("#shakeForm").submit(function(e){
