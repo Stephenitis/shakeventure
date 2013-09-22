@@ -18,8 +18,12 @@ module Api
       response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences#{filters}"))
       # Return all experiences from Xola api based on form filters and sample one
       experience_hash = ActiveSupport::JSON.decode(response.body)
-      @experience = experience_hash['data'].sample
-      @image = "https://dev.xola.com"+nested_hash_finder(@experience,"photo")["src"]
+      experience = experience_hash['data'].sample
+      @image = "https://dev.xola.com"+nested_hash_finder(experience,"photo")["src"]
+      @name = experience['name']
+      @desc = experience['desc']
+      @price = "$" + experience['price'].to_s
+      @miles = experience['price']*13 + rand(500)
 
       render partial: 'shared/experience', layout: false, locals: {experience: @experience, image: @image}
     end
@@ -64,5 +68,11 @@ module Api
       end
     end
 
+
+    def miles_calc
+      self*13 + rand(500)
+    end
+
   end
+
 end
