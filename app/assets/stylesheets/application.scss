@@ -10,15 +10,17 @@
  *
  *= require_self
  *= require_tree
- *= require bootstrap
  */
 
 @import "bootstrap";
 
 // Base CSS
+@import "layouts/base";
 @import "layouts/scaffold";
 @import "layouts/static";
 
 // Shares Modules
 @import "modules/forms";
 @import "modules/font-awesome";
+@import "modules/gn-normalize";
+@import "modules/gn-component";
