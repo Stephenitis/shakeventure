@@ -4,7 +4,7 @@
   <div class ="form-group location text-center">
     <h4>Where are you located?</h4>
 
-    <%= text_field_tag 'location', nil, class: "form-control location-input" %>
+    <%= text_field_tag 'location', nil, class: "form-control location-input text-center", placeholder: "City, Country (ex: San Francisco, USA)" %>
   </div> 
 
   <div class="filter hide">
@@ -39,12 +39,10 @@
     <%= text_field_tag 'duration', nil, class: "form-control", id: 'duration',:readonly => true %>
   </div>
 
-  <%= label_tag :price_range, 'Choose a price range:' %>
   <div class="form-group">
     <div class="filterField">
-      <label>Price:</label>
       <div id='slider'></div>
-      <%= text_field_tag 'slider', nil, class: 'form-control', id: 'price_range' %>
+      <%= text_field_tag 'slider', nil, class: 'form-control', id: 'price_range',:readonly => true %>
     </div>
   </div>
 </div>
