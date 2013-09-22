@@ -15,7 +15,4 @@ module ApplicationHelper
       r
     end
   end
-
-
-
 end
