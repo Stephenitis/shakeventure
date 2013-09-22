@@ -1,33 +1,47 @@
-<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', class: '#', id: 'shakeForm') do %>
-
-  <div class="location">
-  <p>Where are you located?</p>
+<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', role: 'form', id: 'shakeForm') do %>
+  
+  <div class ="form-group location">
+    <p>Where are you located?</p>
   <%= label_tag :location, 'Location' %>
-  <%= text_field_tag 'location' %>
-  <br/>
-  </div>
+  <%= text_field_tag 'location', nil, class: "form-control" %>
+  </div> 
 
   <div class="filter hide">
+  <div class="form-group">
+
   <%= label_tag :price_range, 'Choose a price range:' %>
-  <%= text_field_tag 'price_range', nil %>
+
+  <%= text_field_tag 'price_range', nil, class: "form-control" %>
 
   <p>Choose a Category:</p>
+  <div class="form-group">
   <%= label_tag :sports, 'Sports & Outdoors' %>
-  <%= check_box_tag 'category["sports_outdoors"]', 'SPORTS_OUTDOORS', true%>
-  
-  <%= label_tag :luxury, 'Luxury & Exotic' %>
-  <%= check_box_tag 'category["luxury_exotic"]', 'LUXURY_EXOTIC', true %>
-  
-  <%= label_tag :sightseeing, 'Sightseeing & Tours' %>
-  <%= check_box_tag 'category["sightseeing_tours"]', 'SIGHTSEEING_TOURS', true %>
-  
-  <%= label_tag :cultural, 'Cultural & Urban' %>
-  <%= check_box_tag 'category["cultural_urban"]', 'CULTURAL_URBAN', true %>
-  <br/>
-
-  <%= label_tag :duration, 'Choose a time range:' %>
-  <%= text_field_tag 'duration', nil %>
+  <%= check_box_tag 'category["sports_outdoors"]', 'SPORTS_OUTDOORS', true, class: "form-control" %>
   </div>
+
+   <div class="checkbox">
+  <%= label_tag :luxury, 'Luxury & Exotic' %>
+  <%= check_box_tag 'category["luxury_exotic"]', 'LUXURY_EXOTIC', true, class: "form-control" %>
+  </div>
+
+  <div class="checkbox">
+  <%= label_tag :sightseeing, 'Sightseeing & Tours' %>
+  <%= check_box_tag 'category["sightseeing_tours"]', 'SIGHTSEEING_TOURS', true, class: "form-control" %>
+  </div>
+
+  <div class="checkbox">
+  <%= label_tag :cultural, 'Cultural & Urban' %>
+  <%= check_box_tag 'category["cultural_urban"]', 'CULTURAL_URBAN', true, class: "form-control" %>
+  <br/>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <%= label_tag :duration, 'Choose a time range:' %>
+  <%= text_field_tag 'duration', nil, class: "form-control" %>
+  </div>
+  </div>
+
   <%= submit_tag nil, :class => 'btn btn-default locationForm', :id => 'shakeFormBtn', :value => "Start Adventure" %>
 <% end %>
 
