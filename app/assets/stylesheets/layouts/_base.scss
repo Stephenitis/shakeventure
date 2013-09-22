@@ -10,6 +10,15 @@
 }
 
 .experience-head {
+  
+  position: fixed;
+
+  z-index: 200;
+
+  
+  left: 0;
+  right: 0;
+
   color: #fff;
   background-color: #83c657;
   margin-bottom: 10px;
@@ -17,11 +26,13 @@
   h4{
     line-height: 28px;
     margin: 0;
+    margin-left: 1em;
     padding-bottom: 7px;
   }
   h5 {
     margin-top: 6px;
     margin-bottom: 10px;
+    margin-right: 1em;
   }
   .exp-pricing {
     ul{
@@ -33,6 +44,10 @@
       padding: 0;
       list-style-type: none;
     }
+  }
+
+  a {
+
   }
 }
 
