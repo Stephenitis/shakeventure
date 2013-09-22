@@ -7,12 +7,6 @@ module ApplicationHelper
   def mile_calculator(price)
   	price*13 + rand(500)
   end
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> alejandro
-
   def nested_hash_finder(obj,key)
     results = []
     if obj.respond_to?(:key?) && obj.key?(key)
@@ -24,13 +18,4 @@ module ApplicationHelper
     end
     return results
   end
-
-
-
-<<<<<<< HEAD
->>>>>>> alejandro
-=======
-=======
->>>>>>> f33a2d31d5197243a0577168490452cd585e51d0
->>>>>>> alejandro
 end
