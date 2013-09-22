@@ -1,0 +1,36 @@
+html,
+body{
+  background-color: #dfdad2;
+}
+
+.left {float:left;}
+.right {float:right;}
+
+.emblem {
+  display: inline-block;
+  background-repeat: no-repeat;
+  
+  &.emblem-40 {
+    height:40px;
+    width:35px;
+    background-image:url('/images/sprites/emblem-sprites.png');
+
+    &.emblem-white {background-position: 0px 0px}
+    &.emblem-fog {background-position: -35px 0px}
+    &.emblem-gray {background-position: -70px 0px}
+    &.emblem-lime {background-position: -105px 0px}
+    &.emblem-forest {background-position: -140px 0px}
+    &.emblem-charcoal {background-position: -175px 0px}
+  }
+  &.emblem-136 {
+    height:136px;
+    width:118px;
+    background-image:url('/images/sprites/emblem-sprites-lg.png');
+
+    &.emblem-white {background-position: 0px 0px}
+    &.emblem-fog {background-position: -118px 0px}
+    &.emblem-charcoal {background-position: -236px 0px}
+    &.emblem-lime {background-position: -354px 0px}
+    &.emblem-forest {background-position: -472px 0px}
+  }
+}
