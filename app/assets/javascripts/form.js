@@ -54,13 +54,20 @@ $(document).ready(function() {
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
-      max: 500,
-      values: [ 0, 500 ],
+      max: 10080,
+      values: [ 0, 10080 ],
       slide: function( event, ui ) {
-        $( "#duration" ).val( ui.values[ 0 ] + " minutes - " + ui.values[ 1 ] + " minutes");
+        var firstDays = Math.floor( ui.values[0] / 1440 );
+        var firstHours = Math.floor( ( ui.values[0] % 1440 ) / 60);          
+        var firstMinutes = ( ui.values[0] % 1440 ) % 60;
+        var secondDays = Math.floor( ui.values[1] / 1440 );
+        var secondHours = Math.floor( (ui.values[1] % 1440 ) / 60);          
+        var secondMinutes = ( ui.values[1] % 1440 ) % 60;
+
+        $( "#duration" ).val( firstDays + ' days ' + firstHours + ":" + firstMinutes + " hours - " + secondDays + ' days ' + secondHours + ":" + secondMinutes + " hours");
       }
     });
     $( "#duration" ).val( $( "#slider-range" ).slider( "values", 0 ) +
-      " minutes - " + $( "#slider-range" ).slider( "values", 1 ) + " minutes");
+      " days 0:0 hours - " + Math.floor($( "#slider-range" ).slider( "values", 1 ) / 1440 ) + " days 0:00 hours");
   });
 });
