@@ -8,7 +8,10 @@ module ApplicationHelper
   	price*13 + rand(500)
   end
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> alejandro
 
   def nested_hash_finder(obj,key)
     results = []
@@ -24,5 +27,10 @@ module ApplicationHelper
 
 
 
+<<<<<<< HEAD
+>>>>>>> alejandro
+=======
+=======
+>>>>>>> f33a2d31d5197243a0577168490452cd585e51d0
 >>>>>>> alejandro
 end

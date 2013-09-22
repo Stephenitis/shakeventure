@@ -7,6 +7,15 @@ module Api
 
     def show
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+       # Return all experiences from Xola api based on form filters and sample one
+      response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences?limit=1&category=Wilderness%20Training"))
+      @experiences = response.body
+      @experience_hash =  ActiveSupport::JSON.decode(@experiences)
+      @image = nested_hash_finder(@experience_hash,"src").sample
+=======
+>>>>>>> alejandro
     end
 
     def update 
@@ -63,12 +72,16 @@ module Api
         obj.find{ |*a| r=nested_hash_finder(a.last,key) }
         r
       end
+<<<<<<< HEAD
 =======
        # Return all experiences from Xola api based on form filters and sample one
       response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences?limit=1&category=Wilderness%20Training"))
       @experiences = response.body
       @experience_hash =  ActiveSupport::JSON.decode(@experiences)
       @image = nested_hash_finder(@experience_hash,"src").sample
+>>>>>>> alejandro
+=======
+>>>>>>> f33a2d31d5197243a0577168490452cd585e51d0
 >>>>>>> alejandro
     end
 
