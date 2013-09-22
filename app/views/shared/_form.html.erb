@@ -1,13 +1,18 @@
-<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', role: 'form') do %>
+<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', role: 'form', id: 'shakeForm') do %>
   
-  <div class ="form-group">
+  <div class ="form-group location">
     <p>Where are you located?</p>
   <%= label_tag :location, 'Location' %>
+<<<<<<< HEAD
   <%= text_field_tag 'location',nil, class: "form-control" %>
+=======
+  <%= text_field_tag 'location', nil, class: "form-control" %>
+>>>>>>> 633fda4377c98b52e91a19255dc597cd81a3313a
   </div> 
 
-
+  <div class="filter hide">
   <div class="form-group">
+
   <%= label_tag :price_range, 'Choose a price range:' %>
 
   <%= text_field_tag 'price_range', nil, class: "form-control" %>
@@ -32,13 +37,15 @@
   <%= label_tag :cultural, 'Cultural & Urban' %>
   <%= check_box_tag 'category["cultural_urban"]', 'CULTURAL_URBAN', true, class: "form-control" %>
   <br/>
-  <div>
+  </div>
+  </div>
 
   <div class="form-group">
   <%= label_tag :duration, 'Choose a time range:' %>
   <%= text_field_tag 'duration', nil, class: "form-control" %>
   </div>
+  </div>
 
-  <%= submit_tag nil, :class => 'btn btn-default', class: "btn btn-default" %>
+  <%= submit_tag nil, :class => 'btn btn-default locationForm', :id => 'shakeFormBtn', :value => "Start Adventure" %>
 <% end %>
 
