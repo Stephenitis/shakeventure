@@ -1,3 +1,4 @@
+
 window.onload = function() {
 
   window.addEventListener('shake', shakeEventDidOccur, false);
@@ -9,7 +10,6 @@ window.onload = function() {
      $('#shakeForm').trigger("submit")
   }
 };
-
 
 
 
