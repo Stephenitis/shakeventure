@@ -17,7 +17,10 @@ $(document).ready(function() {
   	$(this).unbind('click');
   });
 
-
+  $("#price").change(function () {                    
+   var newValue = $('#price').val();
+   $("#valuePrice").html(newValue);
+  });
 
   $("#shakeForm").submit(function(e){
   	e.preventDefault();
