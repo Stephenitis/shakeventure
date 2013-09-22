@@ -1,23 +1,27 @@
 <div class ="container">
-  
-<dl class="dl-horizontal">
-  <dt>Your Shakeventure:</dt>
-  <dd><%=@name %></dd>
-  <dt>Description:</dt>
-  <dd><%=@desc %></dd>
-  <dt>Price:</dt>
-  <dd><%=@price %> or redeem with <%= @miles %> Emirates Skywards <sup>&#174</sup>  miles</dd>
+  <div class="row experience-head">
+    <div class="col-xs-7">
+      <h4><%= truncate(@name, length: 40) %></h4>
+    </div>
 
-
-</dl>
-
-
-  <div class="container">
-  	<div class="row">
-  	<div class="col-xs-12">
-  <%= image_tag "#{@image}",class: "img-rounded img-responsive" %>
+    <div class="col-xs-5">
+      <ul class="exp-pricing text-right">
+        <li><h5><%=@price %></h5></li>
+        <li><h5><%= image_tag "emirates-currency.png", class: "em-currency" %><%= @miles %></h5></li>
+      </ul>
+    </div>
   </div>
-</div>
-</div>
 
+  
+  <div class="row">
+    <div class="col-xs-12">
+      <%= image_tag "#{@image}",class: "img-rounded img-responsive" %>
+    </div>
+  </div>
+
+  <div class="exp-desc row">
+    <div class="col-xs-12">
+      <%=@desc %>
+    </div>
+  </div>
 </div>
