@@ -23,13 +23,19 @@ $(document).ready(function() {
 
   $(".locationForm").click(function(e){
   	e.preventDefault();
-  	$("div.location").toggleClass("hide")
-  	$("div.filter").toggleClass("hide")
+  	$(".location").toggleClass("hide")
+  	$(".filter").toggleClass("hide")
   	$(".icon-compass").toggleClass("hide")
-  	$("#shakeFormBtn").removeClass("locationForm")
-  	$("#shakeFormBtn").addClass("filterForm")
   	$("#shakeFormBtn").attr("value", "Shake!")
   	$(this).unbind('click');
+  });
+
+  $('.locationMenuButton').click(function(e){
+    e.preventDefault();
+    $('.location').toggleClass('hide')
+    $('.experience').toggleClass('hide')
+    $('.icon-compass').toggleClass('hide')
+    $('.gn-menu-wrapper').toggleClass('gn-open-all')
   });
 
   $("#price").change(function () {                    
@@ -40,6 +46,7 @@ $(document).ready(function() {
   $("#shakeForm").submit(function(e){
   	e.preventDefault();
   	console.log("In SUBMIT");
-    $('div.filter').addClass("hide")
+    $('.filter').toggleClass("hide")
+    $('.location').addClass('hide')
   });
 });
