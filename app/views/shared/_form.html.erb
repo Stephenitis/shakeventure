@@ -1,14 +1,12 @@
 <%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', class: '#') do %>
-  <p>Where are you located?</p>
-  <%= label_tag :city, 'City' %>
-  <%= text_field_tag 'city', @values['city'] %>
 
-  <%= label_tag :country, 'Country' %>
-  <%= text_field_tag 'country', @values['country'] %>
+  <p>Where are you located?</p>
+  <%= label_tag :location, 'Location' %>
+  <%= text_field_tag 'location' %>
   <br/>
 
   <%= label_tag :price_range, 'Choose a price range:' %>
-  <%= text_field_tag 'price_range', @values['price_range'] %>
+  <%= text_field_tag 'price_range', nil %>
 
   <p>Choose a Category:</p>
   <%= label_tag :sports, 'Sports & Outdoors' %>
@@ -25,5 +23,7 @@
   <br/>
 
   <%= label_tag :duration, 'Choose a time range:' %>
-  <%= text_field_tag 'duration', @values['duration'] %>
+  <%= text_field_tag 'duration', nil %>
+
+  <%= submit_tag nil, :class => 'btn btn-default' %>
 <% end %>
