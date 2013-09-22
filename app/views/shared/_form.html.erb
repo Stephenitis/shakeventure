@@ -1,10 +1,13 @@
-<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', class: '#') do %>
+<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', class: '#', id: 'shakeForm') do %>
 
+  <div class="location">
   <p>Where are you located?</p>
   <%= label_tag :location, 'Location' %>
   <%= text_field_tag 'location' %>
   <br/>
+  </div>
 
+  <div class="filter hide">
   <%= label_tag :price_range, 'Choose a price range:' %>
   <%= text_field_tag 'price_range', nil %>
 
@@ -24,6 +27,7 @@
 
   <%= label_tag :duration, 'Choose a time range:' %>
   <%= text_field_tag 'duration', nil %>
-
-  <%= submit_tag nil, :class => 'btn btn-default' %>
+  </div>
+  <%= submit_tag nil, :class => 'btn btn-default locationForm', :id => 'shakeFormBtn', :value => "Start Adventure" %>
 <% end %>
+
