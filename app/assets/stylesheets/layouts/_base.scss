@@ -20,15 +20,19 @@
   left: 0;
   right: 0;
 
+  height: 64px;
+
   color: #fff;
   background-color: #83c657;
   margin-bottom: 10px;
+  overflow: hidden;
 
   h4{
     line-height: 28px;
     margin: 0;
     margin-left: 1em;
     padding-bottom: 7px;
+    font-size: 100%;
   }
   h5 {
     margin-top: 6px;
@@ -52,6 +56,10 @@
 #imageAndDesc {
     margin-top: 80px;
   }
+
+// #nameContainer {
+//   width: 260px;
+// }
 
 .gn-menu-main.sv-menu {
   z-index: 1;
