@@ -25,8 +25,8 @@ module Api
       @image = "https://dev.xola.com"+nested_hash_finder(experience,"photo")["src"]
       @name = experience['name']
       @desc = experience['desc']
-      @price = "$ " + experience['price'].to_s
-      @miles = experience['price']*13 + rand(500)
+      @price = "$ " + delimit_num(experience['price']).to_s
+      @miles = delimit_num(experience['price']*13 + rand(500))
 
       render partial: 'shared/experience', layout: false, locals: {experience: @experience, image: @image}
     end
@@ -78,6 +78,11 @@ module Api
       s = Geocoder.search(city)
       lat_long << s[0].latitude << s[0].longitude
       lat_long.join(',') + ",#{distance}"
-    end 
+    end
+
+    def delimit_num(num)
+      num.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
+    end
+
   end
 end
