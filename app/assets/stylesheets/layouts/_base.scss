@@ -30,12 +30,58 @@
   }
 }
 
-#shakeForm {padding: 16px;}
+#shakeForm {
+  padding: 16px;
+  .checkbox input[type="checkbox"]{
+    float:right
+  }
+  .ui-widget-content {
+    border: 0;
+  }
+  .ui-state-default {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    padding: 12px;
+    background: #83c657;
+  }
+  #slider-range {
+    margin-bottom:20px;
+    height: 18px;
+  }
+  .ui-slider-range {
+    background: #fff;
+  }
+  .ui-slider-handle {
+    top: -0.4em;
+    margin-left: -0.2em;
+
+    &:last-child{margin-left: -1.8em;}
+  }
+}
 .location h4 {
   margin-top: 22%;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 .location-input {
   padding: 10px;
   height: 50px;
+}
+
+#category-select {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+
+  i{
+    font-size: 18px;
+    display: inline-block;
+    width: 27px;
+  }
+
+  .checkbox {
+    padding: 10px 16px;
+  }
 }
