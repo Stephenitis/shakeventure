@@ -3,33 +3,40 @@ require 'net/https'
 
 module Api
   class AdventuresController < ApplicationController
-    respond_to :json
+    respond_to :json, :html
 
     def show
-      string = ''
-      string = set_values_from_params(params).stringify_values if params['category']
-      p string
-      # Return all experiences from Xola api based on form filters and sample one
-      response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences?category=Wilderness%20Training"))
-      @experiences = response.body
-      p params
-      p '*' * 50
     end
+
+    def update 
+      if params['category']
+        filters = ''
+        values = set_values_from_params(params)
+        filters = stringify_values(values)
+      end
+
+      response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences#{filters}"))
+      # Return all experiences from Xola api based on form filters and sample one
+      @experience = ActiveSupport::JSON.decode(response.body)['data'].sample
+      p @experience
+      p '$' * 50
+      render partial: 'shared/experience', layout: false, locals: {experience: @experience}
+    end
+  
     private
 
     def set_values_from_params(params)
-      p 'I"M HERE'
-      p params
       values = {}
       # values['location'] = params['location'] || 'City, State'
       # values['price_range'] = params['price_range']
 
       values['category'] = collect_categories(params['category'])
+      values
     end
 
-    def stringify_values
+    def stringify_values(values)
       string = '?'
-      self.each_pair do |key, value|
+      values.each_pair do |key, value|
         string_to_add = "#{key}=#{value}"
         string << string_to_add
       end
@@ -45,6 +52,5 @@ module Api
       end
       categories.join(',')
     end
-
   end
 end

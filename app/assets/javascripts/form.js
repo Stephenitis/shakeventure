@@ -1,6 +1,8 @@
 $(document).ready(function() {
-  $('form').on('submit', function(e, data) {
+  $('form').on('ajax:success', function(e, data) {
     e.preventDefault;
     console.log('hi');
+    console.log(data)
+    $('.experience').html(data);
   });
 });
