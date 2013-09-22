@@ -132,17 +132,5 @@ $(document).ready(function() {
 
 
 
-window.onload = function() {
 
-	window.addEventListener('shake', shakeEventDidOccur, false);
-	
-	//define a custom method to fire when shake occurs.
-	function shakeEventDidOccur () {
-	
-		//put your own code here etc.
-		if (confirm("Undo?")) {
-
-		}
-	}
-};
 
