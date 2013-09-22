@@ -12,13 +12,12 @@
     </div>
   </div>
 
-  
-  <div class="row">
-    <div class="col-xs-12">
-      <%= image_tag "#{@image}",class: "img-rounded img-responsive" %>
+  <div id="imageAndDesc" >
+    <div class="row">
+      <div class="col-xs-12">
+        <%= image_tag "#{@image}",class: "img-rounded img-responsive" %>
+      </div>
     </div>
-  </div>
-
   <div class="exp-desc row">
     <div class="col-xs-12">
       <%= truncate(@desc, length: 205) %> <a href="#" > read more </a>

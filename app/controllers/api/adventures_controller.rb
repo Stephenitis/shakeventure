@@ -25,7 +25,7 @@ module Api
       @image = "https://dev.xola.com"+nested_hash_finder(experience,"photo")["src"]
       @name = experience['name']
       @desc = experience['desc']
-      @price = "$" + experience['price'].to_s
+      @price = "$ " + experience['price'].to_s
       @miles = experience['price']*13 + rand(500)
 
       render partial: 'shared/experience', layout: false, locals: {experience: @experience, image: @image}
