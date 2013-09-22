@@ -44,8 +44,8 @@
   <div class="form-group">
     <div class="filterField">
       <label>Price:</label>
-      <input type="range" name="price" id="price" min="0" max="1000" value="1000" />
-      <span class="rangeValue">$<span id="valuePrice">1000</span></span>
+      <div id='slider'></div>
+      <%= text_field_tag 'slider', nil, class: 'form-control', id: 'price_range' %>
     </div>
   </div>
 </div>

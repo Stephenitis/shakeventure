@@ -72,4 +72,17 @@ $(document).ready(function() {
     $( "#duration" ).val( $( "#slider-range" ).slider( "values", 0 ) +
       " days 0:0 hours - " + Math.floor($( "#slider-range" ).slider( "values", 1 ) / 1440 ) + " days 0:00 hours");
   });
+
+  $(function() {
+    $( "#slider" ).slider({
+      min: 0,
+      max: 1000,
+      value: 1000,
+      slide: function( event, ui) {
+        $( "#price_range").val('max price: $' + $('#slider').slider( "value"));
+
+      }
+    });
+    $('#price_range').val( 'max price: $' + $('#slider').slider( "value"));
+  });
 });
