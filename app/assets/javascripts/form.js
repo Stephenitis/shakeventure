@@ -46,7 +46,7 @@ $(document).ready(function() {
   $("#shakeForm").submit(function(e){
   	e.preventDefault();
   	console.log("In SUBMIT");
-    $('.filter').toggleClass("hide")
+    $('.filter').addClass("hide")
     $('.location').addClass('hide')
   });
 
