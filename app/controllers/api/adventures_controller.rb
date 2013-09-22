@@ -69,10 +69,6 @@ module Api
     end
 
 
-    def miles_calc
-      self*13 + rand(500)
-    end
-
   end
 
 end
