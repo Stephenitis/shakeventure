@@ -67,5 +67,13 @@ module Api
         r
       end
     end
+
+    def lat_long(city, distance=70)
+      lat_long = []
+      s = Geocoder.search(city)
+      lat_long << s[0].latitude << s[0].longitude
+      lat_long.join(',') + ", #{distance}"
+    end 
+
   end
 end
