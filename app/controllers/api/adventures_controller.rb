@@ -15,10 +15,13 @@ module Api
         filters = stringify_values(values)
       end
 
-      response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences#{filters}"))
       # Return all experiences from Xola api based on form filters and sample one
+      response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences#{filters}"))
+
       experience_hash = ActiveSupport::JSON.decode(response.body)
-      experience = experience_hash['data'].sample
+      experiences = experience_hash['data']
+      # experiences.select! { |experience| experience['duration'].between?(somerange)}
+      experience = experiences.sample
       @image = "https://dev.xola.com"+nested_hash_finder(experience,"photo")["src"]
       @name = experience['name']
       @desc = experience['desc']
@@ -36,6 +39,7 @@ module Api
       # values['price_range'] = params['price_range']
 
       values['category'] = collect_categories(params['category'])
+      values['price'] = params['price_range']
       values
     end
 

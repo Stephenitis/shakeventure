@@ -4,7 +4,6 @@ module ApplicationHelper
      string.gsub(/[\s\&\/\-]/,' '=>'%20','&'=>'%26','/'=>'%2F','-'=>'%2D')
   end
 
-
   def nested_hash_finder(obj,key)
     results = []
     if obj.respond_to?(:key?) && obj.key?(key)
