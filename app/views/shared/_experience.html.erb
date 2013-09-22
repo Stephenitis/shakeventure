@@ -1,2 +1,20 @@
-<%= @experience %>
-<%= image_tag "#{@image}" %>
+<br><br><br><br><br><br><br><br>
+<div class ="container">
+  
+<dl class="dl-horizontal">
+  <dt>Your Shakeventure:</dt>
+  <dd><%=@name %></dd>
+  <dt>Description:</dt>
+  <dd><%=@desc %></dd>
+  <dt>Price:</dt>
+  <dd><%=@price %> or redeem with <%= @miles %> Emirates Skywards <sup>&#174</sup>  miles</dd>
+
+
+</dl>
+
+
+  <div class="img-responsive">
+  <%= image_tag "#{@image}",class: "img-rounded" %>
+  </div>
+
+</div>

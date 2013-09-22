@@ -21,8 +21,12 @@ module Api
       experience_hash = ActiveSupport::JSON.decode(response.body)
       experiences = experience_hash['data']
       # experiences.select! { |experience| experience['duration'].between?(somerange)}
-      @experience = experiences.sample
-      @image = "https://dev.xola.com"+ nested_hash_finder(@experience,"photo")["src"]
+      experience = experiences.sample
+      @image = "https://dev.xola.com"+nested_hash_finder(experience,"photo")["src"]
+      @name = experience['name']
+      @desc = experience['desc']
+      @price = "$" + experience['price'].to_s
+      @miles = experience['price']*13 + rand(500)
 
       render partial: 'shared/experience', layout: false, locals: {experience: @experience, image: @image}
     end
@@ -69,5 +73,3 @@ module Api
     end
   end
 end
-
-
