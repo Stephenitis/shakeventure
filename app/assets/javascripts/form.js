@@ -49,4 +49,18 @@ $(document).ready(function() {
     $('.filter').toggleClass("hide")
     $('.location').addClass('hide')
   });
+
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 0, 500 ],
+      slide: function( event, ui ) {
+        $( "#duration" ).val( ui.values[ 0 ] + " minutes - " + ui.values[ 1 ] + " minutes");
+      }
+    });
+    $( "#duration" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+      " minutes - " + $( "#slider-range" ).slider( "values", 1 ) + " minutes");
+  });
 });

@@ -35,9 +35,11 @@
   </div>
 
   <div class="form-group">
-  <%= label_tag :duration, 'Choose a time range:' %>
-  <%= text_field_tag 'duration', nil, class: "form-control" %>
+    <%= label_tag :duration, 'Choose a time range:' %>
+    <div id='slider-range'></div>
+    <%= text_field_tag 'duration', nil, class: "form-control", id: 'duration' %>
   </div>
+
   <%= label_tag :price_range, 'Choose a price range:' %>
   <div class="form-group">
     <div class="filterField">

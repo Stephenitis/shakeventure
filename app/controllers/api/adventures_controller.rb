@@ -40,6 +40,7 @@ module Api
 
       values['category'] = collect_categories(params['category'])
       values['price'] = params['price_range']
+      values['geo'] = "37.774929,-122.419416,30"
       values
     end
 
@@ -71,5 +72,12 @@ module Api
         r
       end
     end
+
+    def lat_long(city, distance=70)
+      lat_long = []
+      s = Geocoder.search(city)
+      lat_long << s[0].latitude << s[0].longitude
+      lat_long.join(',') + ",#{distance}"
+    end 
   end
 end
