@@ -9,13 +9,15 @@ module ApplicationHelper
   end
 
   def nested_hash_finder(obj,key)
+    results = []
     if obj.respond_to?(:key?) && obj.key?(key)
-      obj[key]
+      results << obj[key]
     elsif obj.respond_to?(:each)
       r = nil
       obj.find{ |*a| r=nested_hash_finder(a.last,key) }
       r
     end
+    return results
   end
 
 

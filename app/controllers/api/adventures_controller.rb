@@ -11,8 +11,10 @@ module Api
       response = Net::HTTP.get_response(URI("https://dev.xola.com/api/experiences?limit=1&category=Wilderness%20Training"))
       @experiences = response.body
       @experience_hash =  ActiveSupport::JSON.decode(@experiences)
-      @image = nested_hash_finder(@experience_hash,"src")
+      @image = nested_hash_finder(@experience_hash,"src").sample
     end
 
   end
 end
+
+
