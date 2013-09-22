@@ -17,8 +17,6 @@ $(document).ready(function() {
   	$(this).unbind('click');
   });
 
-
-
   $("#shakeForm").submit(function(e){
   	e.preventDefault();
   	console.log("In SUBMIT");
