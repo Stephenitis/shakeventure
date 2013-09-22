@@ -11,10 +11,6 @@
   <div class="filter hide">
   <div class="form-group">
 
-  <%= label_tag :price_range, 'Choose a price range:' %>
-
-  <%= text_field_tag 'price_range', nil, class: "form-control" %>
-
   <p>Choose a Category:</p>
   <div class="form-group">
     <%= label_tag :sports, 'Sports & Outdoors' %>
@@ -41,6 +37,14 @@
   <div class="form-group">
   <%= label_tag :duration, 'Choose a time range:' %>
   <%= text_field_tag 'duration', nil, class: "form-control" %>
+  </div>
+  <%= label_tag :price_range, 'Choose a price range:' %>
+  <div class="form-group">
+    <div class="filterField">
+      <label>Price:</label>
+      <input type="range" name="price" id="price" min="0" max="1000" value="300" />
+      <span class="rangeValue">$<span id="valuePrice">300</span></span>
+    </div>
   </div>
   </div>
 
