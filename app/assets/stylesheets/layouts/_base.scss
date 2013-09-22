@@ -1,0 +1,15 @@
+.gn-menu-main.sv-menu {
+  background-color: #83c657;
+  .logo-emblem {
+    position: absolute;
+    top: 10px;
+    left: 46%;
+    border: 0;
+  }
+  .gn-icon-menu {color:#fff;}
+  li {
+    border: 0;
+    
+    &:hover a{background-color: #73b647;}
+  }
+}
