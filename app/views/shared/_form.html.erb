@@ -1,0 +1,21 @@
+<%= form_tag({controller: 'api/adventures', action: 'show'}, method: 'get', class: '#') do %>
+  <%= label_tag :price_range, 'Choose a price range:' %>
+  <%= range_field_tag :price_range, 5, min: 0, max: 5000, step: 10 %>
+
+  <p>Choose a Category:</p>
+  <%= label_tag :sports, 'Sports & Outdoors' %>
+  <%= check_box_tag 'category["sports_outdoors"]', 'SPORTS_OUTDOORS', true%>
+  
+  <%= label_tag :luxury, 'Luxury & Exotic' %>
+  <%= check_box_tag 'category["luxury_exotic"]', 'LUXURY_EXOTIC', true %>
+  
+  <%= label_tag :sightseeing, 'Sightseeing & Tours' %>
+  <%= check_box_tag 'category["sightseeing_tours"]', 'SIGHTSEEING_TOURS', true %>
+  
+  <%= label_tag :cultural, 'Cultural & Urban' %>
+  <%= check_box_tag 'category["cultural_urban"]', 'CULTURAL_URBAN', true %>
+  <br/>
+
+  <%= label_tag :duration, 'Choose a time range:' %>
+  <%= range_field_tag :price_range, 500, min: 0, max: 600, step: 15 %>
+<% end %>
