@@ -1,11 +1,10 @@
 
 <%= form_tag({controller: 'api/adventures', action: 'update'}, method: 'post', remote: true, role: 'form', id: 'shakeForm') do %>
   
-  <div class ="form-group location">
-    <p>Where are you located?</p>
+  <div class ="form-group location text-center">
+    <h4>Where are you located?</h4>
 
-    <%= label_tag :location, 'Location' %>
-    <%= text_field_tag 'location', nil, class: "form-control" %>
+    <%= text_field_tag 'location', nil, class: "form-control location-input" %>
   </div> 
 
   <div class="filter hide">
@@ -50,7 +49,7 @@
   </div>
 </div>
 
-  <%= submit_tag nil, :class => 'btn btn-default locationForm', :id => 'shakeFormBtn', :value => "Start Adventure" %>
+  <%= submit_tag nil, :class => 'btn btn-success btn-sv locationForm', :id => 'shakeFormBtn', :value => "Next" %>
 <% end %>
 
 <a class='buy btn btn-default hide'>Buy Now!</a>
